@@ -1,0 +1,100 @@
+.mob_footer {
+  display: none;
+
+  .copyright {
+    color: #333;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 0;
+  //background: #fff;
+  z-index: 2;
+  font: 13px $ApercuRegular;
+
+  ._blue & {
+    //background: #007fff;
+  }
+
+  @include respond-to-max($resp_step_2) {
+    display: none;
+
+    &.mob_footer {
+      position: relative;
+      display: block;
+      background: #fff;
+      padding: 40px 0;
+    }
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 40px;
+  }
+
+  @include respond-to-min($resp_step_3) {
+    font-size: 14px;
+  }
+}
+
+$rectWidth: $content-max-w;
+
+.rect_1024 {
+  @extend %hor_centr;
+  position: absolute;
+  width: $rectWidth;
+  max-width: 100%;
+  top: 0;
+  bottom: 0;
+  border: solid red;
+  border-width: 0 1px;
+  z-index: 10;
+  pointer-events: none;
+
+  &:after {
+    @extend %hor_centr;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: red;
+  }
+}
+
+.copyright {
+  float: left;
+}
+
+.footer_links {
+  float: right;
+  font-family: $ApercuMedium;
+  letter-spacing: .05em;
+
+  li {
+    float: left;
+    padding-left: 20px;
+  }
+}
+
+.mob_hidden {
+  @include respond-to-max($resp_step_2) {
+    display: none;
+  }
+}
+
+.tab_only {
+  @include respond-to-min($resp_step_2 + 1) {
+    display: none;
+  }
+}
+
+.dt_only {
+
+  @include respond-to-max($resp_step_4) {
+    display: none !important;
+  }
+}

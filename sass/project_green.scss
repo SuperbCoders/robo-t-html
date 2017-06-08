@@ -1,0 +1,47 @@
+@mixin transform_rotate($deg : 0) {
+  -webkit-transform: rotate($deg+deg);
+  -ms-transform: rotate($deg+deg);
+  transform: rotate($deg+deg);
+}
+
+.main_content.content_green {
+  background: #44db80;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+  }
+
+  $b_size: 9400px;
+
+  &:before {
+    @include transform_rotate(-19);
+    left: -(100 + ($b_size / 2));
+    top: -(2000px + $b_size / 2);
+    height: $b_size;
+    width: $b_size;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(75, 236, 58, 1) 0%, rgba(77, 236, 60, 1) 1%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(75, 236, 58, 1) 0%, rgba(77, 236, 60, 1) 1%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(ellipse at center, rgba(75, 236, 58, 1) 0%, rgba(77, 236, 60, 1) 1%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4bec3a', endColorstr='#00ffffff', GradientType=1);
+
+  }
+
+  $a_size: 6300px;
+
+  &:after {
+    @include transform_rotate(19);
+    width: $a_size;
+    height: $a_size;
+    left: -(100 + ($a_size / 2));
+    bottom: -(1200px + $a_size / 2);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(131, 241, 182, 1) 0%, rgba(133, 241, 183, 1) 1%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(131, 241, 182, 1) 0%, rgba(133, 241, 183, 1) 1%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(ellipse at center, rgba(131, 241, 182, 1) 0%, rgba(133, 241, 183, 1) 1%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#83f1b6', endColorstr='#00ffffff', GradientType=1);
+
+  }
+}
+
+

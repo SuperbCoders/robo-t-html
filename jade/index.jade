@@ -1,0 +1,211 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('v5')
+
+  body
+    .wrapper.mainSlider
+      #about.slide
+        .header
+          .section_inner
+            ul.header_menu
+              li
+                a.gl_link(href='mailto:hi@robo-t.ru') hi@robo-t.ru
+              li
+                a.gl_link(href='tel:+79036281220') +7 903 628 12 20
+              li.mob_hidden
+                | <div class="fb-messengermessageus" 
+                |   messenger_app_id="529152960433172" 
+                |   page_id="181827998523606"
+                |   color="white"
+                |   size="large" >
+                | </div>  
+              
+                //-a.gl_link(href='#')
+                  span.menu_icon
+                    img(src='i/msngr_icon.svg')
+                  span Message Us
+                  
+            .logo_block
+              a.logo(href='#') robo-t
+
+        .main_content.mCSB
+          .section_inner
+            .section_caption Web and mobile apps from idea to finished product
+            
+            ul.feature_list
+              li: .feature_item
+                .feature_caption Specialism
+                p We are full stack developers: we can do everything from UI/UX design up to web and mobile development. We can produce an entire project or we can help with just a specific portion.
+              
+              li: .feature_item
+                .feature_caption Expirience
+                p Our studio was founded at 2006 (we remember dial-up). We did corporate websites, e-commerce projects, APIs, 3D models, illustrations, SaaS projects, corporate web apps, mobile apps and other stuff.
+              
+              li: .feature_item
+                .feature_caption Clients
+                p We worked with different clients from SMBs, non profit organizations, startups to big international and Russian corporations like Coca Cola, British American Tobacco, Chivas Regal, Sberbank, Uniastrum bank, PSBank.
+              
+              li: .feature_item
+                .feature_caption Technologies
+                p._tech_stack
+                  span._clr_red UI/UX
+                  |  Sketch + inVision + Zeplin.io 
+                  span._clr_red Front-end
+                  |  SASS (or LESS) + Angular/React 
+                  span._clr_red Back-end
+                  |  Nginx + ROR + PostgreSQL (or MySQL) + Redis + Unicorn
+              
+          .footer
+            .section_inner
+              .copyright Moscow, 2006–2017
+                
+              ul.footer_links
+                li
+                  a.gl_link.text_upper._clr_blue.slideTo(data-slide=1 href='#pricing')
+                    span.fw_600 pricing
+                li
+                  a.gl_link.text_upper._clr_blue.slideTo(data-slide=2 href='#works')
+                    span.fw_600 Works
+                  
+      #pricing.slide._blue
+        .header
+          .section_inner
+            ul.nav
+              li
+                a.gl_link.slideTo(data-slide=0 href='#about') ABOUT US
+                
+            .logo_block
+              a.logo(href='#') robo-t
+
+        .main_content.mCSB.mcsb_table
+          .gl_table_cell
+            .section_inner.work_block
+              .work_caption 
+                | We like to apply 
+                span.tab_only <br> 
+                |  Time-and-Materials pricing model <br> Our median per hour rate is $50
+                
+              .text_center
+                a.btn_v1.email_btn.white_btn(href='#') Email us
+                
+              p.text_center to understand if we fit your expectations
+                
+          .footer
+            .section_inner
+              .copyright Moscow, 2006–2017
+              ul.footer_links
+                li
+                  a.gl_link.text_upper._clr_white.slideTo(data-slide=2 href='#works')
+                    span.fw_600 Works
+                    
+      #works.slide.works_slide
+        .header
+          .section_inner
+            ul.nav
+              li
+                a.gl_link.slideTo(data-slide=1 href='#pricing') PRICING
+              li
+                a.gl_link.slideTo(data-slide=0 href='#about') ABOUT US
+                
+            .logo_block
+              a.logo(href='#') robo-t
+
+        style
+          include ../styles/project_blue.css
+
+        .main_content.content_blue
+          .section_inner
+            .project_caption
+              b Narrative. 
+              span We designed and developed a new blog platform. 
+              span.dt_only We did UI/UX, front-end and back-end
+              
+            ul.project_tags
+              li
+                span.tag_btn.btn_v2.white_b_btn design
+              li
+                span.tag_btn.btn_v2.white_b_btn front-end coding
+              li
+                span.tag_btn.btn_v2.white_b_btn research
+                
+            .project_url
+              a.gl_link._clr_white(href='#') www.domain.com
+
+            .project_block
+              .project_previews_holder: ul#grid.project_previews
+                li.box._full: .project_main_img
+                  .browser
+                    span
+                    img(src='i/main_pic.jpg')
+                li.box
+                  .project_preview.projectPreviewBtn(data-target='http://www.naverstay.me/i/folio/vinal/i/product_1.jpg')
+                    img(src='i/meetings.jpg')
+                li.box
+                  .project_preview.projectPreviewBtn(data-target='i/main_pic.jpg')
+                    img(src='i/filter_organs.jpg')
+                li.box
+                  .project_preview.projectPreviewBtn(data-target='http://www.naverstay.me/i/folio/vinal/i/product_1.jpg')
+                    img(src='i/create_task.jpg')
+                li.box
+                  .project_preview.projectPreviewBtn(data-target='i/main_pic.jpg')
+                    img(src='i/filter_calendar.jpg')
+                li.box
+                  .project_preview.projectPreviewBtn(data-target='http://www.naverstay.me/i/folio/vinal/i/product_1.jpg')
+                    img(src='i/files.jpg')
+              
+            .other_projects
+              p.text_upper Other projects
+              
+              ul 
+                li: a.gl_link._clr_white(href='#')
+                  b Sberbank 
+                  span Corporate Web App
+                li: a.gl_link._clr_white(href='#') 
+                  b Bling-Blings 
+                  span Identity + Website + Online store
+                li: a.gl_link._clr_white(href='#') 
+                  b Vokrug Sveta 
+                  span Android App
+                    
+          .footer
+            .section_inner
+              .copyright Moscow, 2006–2017
+              ul.footer_links
+                li
+                  a.gl_link.text_upper._clr_white.slideTo(data-slide=0 href='#next_project')
+                    span.fw_600 Next project
+                    
+        .next_project_loader.nextProject(data-next-page='index.html')
+          style
+            include ../styles/project_green.css
+  
+          .main_content.content_green
+            .section_inner
+              .project_caption
+                b Delovaya Sreda 
+                span An online media for entrepreners. We produced the entire project
+  
+              //-ul.project_tags
+                li
+                  span.tag_btn.btn_v2.white_b_btn design
+                li
+                  span.tag_btn.btn_v2.white_b_btn front-end coding
+                li
+                  span.tag_btn.btn_v2.white_b_btn research
+  
+              //-.project_url
+                a.gl_link._clr_white(href='#') www.domain.com
+  
+              .project_block
+                .project_main_img
+                  .browser
+                    span
+                    img(src='i/next_project.jpg')
+            
+        .mob_footer.footer
+          .section_inner
+            .copyright Moscow, 2006–2017
+              
+    +fb_script()
+    | <script type="text/javascript" src="js/retina.min.js"></script>

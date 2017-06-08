@@ -1,0 +1,50 @@
+//************  buttons
+
+.btn_v1 {
+  height: 60px;
+
+  &.email_btn {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 14px;
+    font: 24px/30px $Reader;
+    width: 230px;
+    max-width: 100%;
+  }
+}
+
+.btn_v2 {
+  height: 30px;
+
+  &.tag_btn {
+    display: block;
+    //cursor: pointer;
+    border-radius: 15px;
+    padding: 5px 13px;
+    font: 14px/18px $ApercuRegular;
+  }
+}
+
+.white_btn {
+  @include transition_all(border .3s, color .3s, background .3s);
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+
+  &:hover {
+    background: #fff;
+    color: #007fff;
+  }
+}
+
+.white_b_btn {
+  border: 1px solid #fff;
+  color: #fff;
+
+  &:hover {
+    
+  }
+
+}

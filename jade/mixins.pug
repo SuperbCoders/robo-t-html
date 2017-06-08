@@ -1,0 +1,49 @@
+mixin dev_head(page_title)
+  head
+    title=page_title
+    | 
+    | <!-- saved from url=(0014)about:internet -->
+    meta(charset='utf-8')
+    meta(name='viewport', content="width=device-width, initial-scale=1.0")
+    meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="format-detection", content="telephone=no")
+    link(rel='stylesheet', href='styles/main_global.css', media='all')
+    script(src='js/jquery1.10.js')
+    script(src='js/jquery.mousewheel.min.js')
+    //script(src='js/jquery.mCustomScrollbar.min.js')
+    script(src='js/slick.js')
+    script(src='js/imagesloaded.pkgd.min.js')
+    script(src='js/isotope.pkgd.min.js')
+    script(src='js/packery-mode.pkgd.js')
+    script(src='js/script.js')
+
+mixin loop_while(counter)
+  -i=0;
+  while i < counter
+    -i++;
+    block
+
+mixin fb_script()
+  |   <script>
+  |     window.fbAsyncInit = function() {
+  |       FB.init({
+  |         appId: 529152960433172,
+  |         xfbml: true,
+  |         version: "v2.6"
+  |       });
+  |     };
+  | 
+  |     (function(d, s, id){
+  |        var js, fjs = d.getElementsByTagName(s)[0];
+  |        if (d.getElementById(id)) { return; }
+  |        js = d.createElement(s); js.id = id;
+  |        js.src = "//connect.facebook.net/en_US/sdk.js";
+  |        fjs.parentNode.insertBefore(js, fjs);
+  |     }(document, 'script', 'facebook-jssdk'));
+  |   </script>
+  | 
+  
+  
+
+  

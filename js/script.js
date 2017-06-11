@@ -174,12 +174,24 @@ function checkNextProjectLoader() {
 
   } else { // desktop
 
-    var nextPrSContent = nextPr.find('.main_content');
+    var nextPrSContent = nextPr.find('.project_container'), prBlock = $('.projectContainer .project_block');
 
     console.log(doc.scrollTop(), wnd.height(), nextPrSContent.outerHeight(), nextProjectMarker.offset().top);
 
-    nextPrSContent.css('margin-top', wnd.height() - nextPrSContent.outerHeight() * 2 / 3 > nextProjectMarker.offset().top ? nextPrSContent.outerHeight() / -3 : 0);
+    var project_block_start_pos = wnd.height() * 4 / 5;
+    var project_browser_start_pos = wnd.height() / 1.5;
+    var browser_scroll_speed = 3;
 
+    if (project_block_start_pos > nextProjectMarker.offset().top) {
+      if (project_browser_start_pos < nextProjectMarker.offset().top) {
+        nextPrSContent.css('margin-top', -(project_block_start_pos - nextProjectMarker.offset().top));
+      } else {
+        prBlock.css('margin-top', -Math.min(wnd.height() / 2, browser_scroll_speed * (project_browser_start_pos - nextProjectMarker.offset().top)));
+      }
+    } else {
+      nextPrSContent.css('margin-top', 0);
+      prBlock.css('margin-top', 0);
+    }
   }
 }
 

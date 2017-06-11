@@ -358,7 +358,7 @@ body {
     margin-bottom: 8px;
     letter-spacing: .0025em;
   }
-  
+
   ._clr_red {
     &:hover {
       text-decoration: underline;
@@ -632,7 +632,19 @@ body {
   text-transform: uppercase;
 }
 
+.project_container {
+  @extend %translate3d;
+  position: relative;
+  padding-top: 195px;
+  box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.30);
+
+  @include respond-to-max($resp_step_2) {
+    padding-bottom: 30px;
+  }
+}
+
 .next_project_loader {
+  @extend %translate3d;
   position: relative;
   z-index: 3;
 
@@ -640,13 +652,20 @@ body {
     height: 0;
   }
 
-  .main_content {
-    @include transition_all(margin .7s);
-    box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.30);
+  .bg_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 
     &:after {
       display: none !important;
     }
+  }
+
+  .main_content {
+    //@include transition_all(margin .7s);
 
     &.show_up {
       //@include transform_translate(0, -33%);

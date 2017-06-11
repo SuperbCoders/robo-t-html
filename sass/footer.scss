@@ -38,6 +38,10 @@
   @include respond-to-min($resp_step_3) {
     font-size: 14px;
   }
+
+  .checklist & {
+    font-family: $ProximaNovaRegular;
+  }
 }
 
 $rectWidth: $content-max-w;

@@ -1,0 +1,36 @@
+.inp_hidden {
+  display: none;
+}
+
+.check_v1 {
+
+  .check_text {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      width: 18px;
+      height: 18px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 2px;
+      border: 2px solid #bbb;
+    }
+  }
+
+  &:hover {
+    .check_text {
+      &:before {
+        border: 2px solid #007fff;
+      }
+    }
+  }
+
+  .inp_hidden:checked ~ .check_text:before {
+    border: 2px solid #007fff;
+    background: #007fff url(../i/check.svg) no-repeat 50% 50%;
+  }
+}

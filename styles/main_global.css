@@ -248,6 +248,20 @@ a {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url(../fonts/ProximaNovaBold.eot);
+  src: url(../fonts/ProximaNovaBold.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaBold.woff) format("woff"), url(../fonts/ProximaNovaBold.ttf) format("truetype"), url(../fonts/ProximaNovaBold.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNovaRegular';
+  src: url(../fonts/ProximaNovaRegular.eot);
+  src: url(../fonts/ProximaNovaRegular.eot?#iefix) format("embedded-opentype"), url(../fonts/ProximaNovaRegular.woff) format("woff"), url(../fonts/ProximaNovaRegular.ttf) format("truetype"), url(../fonts/ProximaNovaRegular.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.2
@@ -3282,6 +3296,12 @@ body b {
   clear: both;
 }
 
+.mb {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
 .wrapper {
   position: relative;
   min-height: 100%;
@@ -3321,6 +3341,22 @@ body b {
     height: 100vh;
   }
 }
+.slide.checklist {
+  font-family: "ProximaNovaRegular", sans-serif;
+}
+.slide.checklist .nav li {
+  padding-left: 24px;
+}
+.slide.checklist .nav .gl_link {
+  color: #333;
+  text-transform: uppercase;
+}
+.slide.checklist .nav .gl_link:hover {
+  color: #007fff;
+}
+.slide.checklist .feature_caption {
+  font-family: "ProximaNovaBold", sans-serif;
+}
 
 .main_content {
   position: relative;
@@ -3330,6 +3366,9 @@ body b {
 }
 .slide:first-child .main_content {
   padding-top: 202px;
+}
+.checklist.slide .main_content {
+  padding-top: 125px;
 }
 .main_content.mCustomScrollbar {
   padding: 0;
@@ -3477,15 +3516,24 @@ body b {
   font-size: 20px;
   margin-bottom: 50px;
 }
+.checklist .section_caption {
+  margin-bottom: 40px;
+}
 @media only screen and (min-width: 768px) {
   .section_caption {
     font-size: 31px;
     margin-bottom: 45px;
   }
+  .checklist .section_caption {
+    margin-bottom: 35px;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .section_caption {
     margin-bottom: 47px;
+  }
+  .checklist .section_caption {
+    margin-bottom: 37px;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -3494,26 +3542,43 @@ body b {
   }
 }
 
-.feature_list li {
+.feature_list > li {
   margin-bottom: 20px;
 }
+.checklist .feature_list > li {
+  margin-bottom: 12px;
+}
 @media only screen and (min-width: 768px) {
-  .feature_list li {
+  .feature_list > li {
     margin-bottom: 17px;
     max-width: 620px;
   }
+  .checklist .feature_list > li {
+    margin-bottom: 19px;
+  }
 }
 @media only screen and (min-width: 1024px) {
-  .feature_list li {
+  .feature_list > li {
     margin-bottom: 30px;
     max-width: 780px;
   }
+  .checklist .feature_list > li {
+    margin-bottom: 22px;
+  }
 }
 @media only screen and (min-width: 1440px) {
-  .feature_list li {
+  .feature_list > li {
     margin-bottom: 32px;
     max-width: none;
   }
+  .checklist .feature_list > li {
+    margin-bottom: 24px;
+  }
+}
+
+.check_list li {
+  margin-bottom: 8px;
+  letter-spacing: .0025em;
 }
 
 .feature_item {
@@ -3982,6 +4047,9 @@ body b {
   }
 }
 
+.header_menu {
+  float: left;
+}
 .header_menu li {
   float: left;
   padding-right: 35px;
@@ -4044,6 +4112,9 @@ body b {
 .works_slide .logo, ._blue .logo {
   color: #fff;
 }
+.checklist .logo {
+  font-size: 20px;
+}
 
 .nav {
   float: right;
@@ -4055,6 +4126,11 @@ body b {
 .nav .gl_link {
   font: 14px "ApercuMedium", sans-serif;
   color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .checklist .nav {
+    line-height: normal;
+  }
 }
 
 .menu_item {
@@ -4068,6 +4144,33 @@ body b {
   display: block;
   padding-left: 32px;
   text-decoration: none;
+}
+
+.inp_hidden {
+  display: none;
+}
+
+.check_v1 .check_text {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
+.check_v1 .check_text:before {
+  width: 18px;
+  height: 18px;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2px;
+  border: 2px solid #bbb;
+}
+.check_v1:hover .check_text:before {
+  border: 2px solid #007fff;
+}
+.check_v1 .inp_hidden:checked ~ .check_text:before {
+  border: 2px solid #007fff;
+  background: #007fff url(../i/check.svg) no-repeat 50% 50%;
 }
 
 .btn_v1 {
@@ -4148,6 +4251,9 @@ body b {
   .footer {
     font-size: 14px;
   }
+}
+.checklist .footer {
+  font-family: "ProximaNovaRegular", sans-serif;
 }
 
 .rect_1024 {

@@ -32,6 +32,12 @@ body {
   clear: both;
 }
 
+.mb {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
 .wrapper {
   position: relative;
   min-height: 100%;
@@ -79,6 +85,29 @@ body {
     //padding-top: 215px;
     height: 100vh;
   }
+
+  &.checklist {
+    font-family: $ProximaNovaRegular;
+
+    .nav {
+      li {
+        padding-left: 24px;
+      }
+
+      .gl_link {
+        color: #333;
+        text-transform: uppercase;
+
+        &:hover {
+          color: #007fff;
+        }
+      }
+    }
+
+    .feature_caption {
+      font-family: $ProximaNovaBold;
+    }
+  }
 }
 
 .main_content {
@@ -89,6 +118,10 @@ body {
 
   .slide:first-child & {
     padding-top: 202px;
+  }
+
+  .checklist.slide & {
+    padding-top: 125px;
   }
 
   &.mCustomScrollbar {
@@ -251,39 +284,79 @@ body {
   font-size: 20px;
   margin-bottom: 50px;
 
+  .checklist & {
+    margin-bottom: 40px;
+  }
+
   @include respond-to-min($resp_step_2) {
     font-size: 31px;
     margin-bottom: 45px;
+
+    .checklist & {
+      margin-bottom: 35px;
+    }
   }
 
   @include respond-to-min($resp_step_3) {
     margin-bottom: 47px;
+
+    .checklist & {
+      margin-bottom: 37px;
+    }
   }
 
   @include respond-to-min($resp_step_4) {
     font-size: 34px;
   }
+
+  .checklist & {
+
+  }
 }
 
 .feature_list {
 
-  li {
+  > li {
     margin-bottom: 20px;
+
+    .checklist & {
+      margin-bottom: 12px;
+    }
 
     @include respond-to-min($resp_step_2) {
       margin-bottom: 17px;
       max-width: 620px;
+
+      .checklist & {
+        margin-bottom: 19px;
+      }
     }
 
     @include respond-to-min($resp_step_3) {
       margin-bottom: 30px;
       max-width: 780px;
+
+      .checklist & {
+        margin-bottom: 22px;
+      }
     }
 
     @include respond-to-min($resp_step_4) {
       margin-bottom: 32px;
       max-width: none;
+
+      .checklist & {
+        margin-bottom: 24px;
+      }
     }
+  }
+}
+
+.check_list {
+
+  li {
+    margin-bottom: 8px;
+    letter-spacing: .0025em;
   }
 }
 

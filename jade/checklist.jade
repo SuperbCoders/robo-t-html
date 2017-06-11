@@ -1,0 +1,102 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('v5 checklist')
+
+  body
+    .wrapper.mainSlider
+      #checklist.slide.checklist
+        .header
+          .section_inner.clearfix
+            ul.header_menu
+              li
+                .mb: a.logo(href='index.html') robo-t
+            
+            ul.nav
+              li
+                a.gl_link(href='#') верстка
+              li
+                a.gl_link(href='#') ДИзайн
+              li
+                a.gl_link(href='#') Github
+
+        .main_content.mCSB
+          .section_inner
+            .section_caption Чеклист верстки
+            
+            ul.feature_list
+              li: .feature_item
+                .feature_caption Общее
+                ul.check_list
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Адаптивность проверена на основных размерах экранов (320, 480, 1024, 1280, 1440, 1600, 2k)
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Viewport Meta Tag используется правильно
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text 
+                        span Используется 
+                        span._clr_red X-UA-Compatible meta tag
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox' checked)
+                      span.check_text 
+                        span Используется 
+                        span._clr_red Format detection meta tags
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Apple-Specific meta tags
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Задан правильный язык и кодировка
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Правильно используются семантические HTML теги
+                        
+              
+              li: .feature_item
+                .feature_caption Графика
+                ul.check_list
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Поддерживаются retina экраны
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Favicon 16x16, 32x32
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Apple icons
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox' checked)
+                      span.check_text Android icons
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Используем спрайты
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Для всех изображений указаны размеры
+                  li
+                    label.check_v1
+                      input.inp_hidden(type='checkbox')
+                      span.check_text Для всех изображений используется атрибут alt
+                
+          .footer
+            .section_inner
+              .copyright Moscow, 2006–2017
+                
+    +fb_script()
+ 

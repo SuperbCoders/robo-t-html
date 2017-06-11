@@ -31,6 +31,7 @@
 
 .header_menu {
   @extend %clearfix;
+  float: left;
 
   li {
     float: left;
@@ -101,6 +102,10 @@
   ._blue & {
     color: #fff;
   }
+
+  .checklist & {
+    font-size: 20px;
+  }
 }
 
 .nav {
@@ -114,6 +119,12 @@
   .gl_link {
     font: 14px $ApercuMedium;
     color: #fff;
+  }
+
+  @include respond-to-max($resp_step_2) {
+    .checklist & {
+      line-height: normal;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-mixin dev_head(page_title)
+mixin dev_head(page_title, index)
   head
     title=page_title
     | 
@@ -9,14 +9,15 @@ mixin dev_head(page_title)
     meta(name="apple-mobile-web-app-capable", content="yes")
     meta(name="format-detection", content="telephone=no")
     link(rel='stylesheet', href='styles/main_global.css', media='all')
-    script(src='js/jquery1.10.js')
-    script(src='js/jquery.mousewheel.min.js')
-    //script(src='js/jquery.mCustomScrollbar.min.js')
-    script(src='js/slick.js')
-    script(src='js/imagesloaded.pkgd.min.js')
-    script(src='js/isotope.pkgd.min.js')
-    script(src='js/packery-mode.pkgd.js')
-    script(src='js/script.js')
+    - if (index)
+      script(src='js/jquery1.10.js')
+      script(src='js/jquery.mousewheel.min.js')
+      //script(src='js/jquery.mCustomScrollbar.min.js')
+      script(src='js/slick.js')
+      script(src='js/imagesloaded.pkgd.min.js')
+      script(src='js/isotope.pkgd.min.js')
+      script(src='js/packery-mode.pkgd.js')
+      script(src='js/script.js')
 
 mixin loop_while(counter)
   -i=0;

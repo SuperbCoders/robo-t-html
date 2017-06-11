@@ -13,7 +13,7 @@
     position: absolute;
   }
 
-  $b_size: 9400px;
+  $b_size: 11400px;
 
   &:before {
     @include transform_rotate(-19);

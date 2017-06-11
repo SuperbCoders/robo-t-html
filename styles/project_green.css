@@ -9,10 +9,10 @@
   -webkit-transform: rotate(-19deg);
   -ms-transform: rotate(-19deg);
   transform: rotate(-19deg);
-  left: -4800px;
-  top: -6700px;
-  height: 9400px;
-  width: 9400px;
+  left: -5800px;
+  top: -7700px;
+  height: 11400px;
+  width: 11400px;
   background: -moz-radial-gradient(center, ellipse cover, #4bec3a 0%, #4dec3c 1%, rgba(255, 255, 255, 0) 100%);
   background: -webkit-radial-gradient(center, ellipse cover, #4bec3a 0%, #4dec3c 1%, rgba(255, 255, 255, 0) 100%);
   background: radial-gradient(ellipse at center, #4bec3a 0%, #4dec3c 1%, rgba(255, 255, 255, 0) 100%);

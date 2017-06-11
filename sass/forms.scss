@@ -3,7 +3,10 @@
 }
 
 .check_v1 {
-
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 3px;
+  
   .check_text {
     display: block;
     position: relative;

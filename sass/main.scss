@@ -358,6 +358,12 @@ body {
     margin-bottom: 8px;
     letter-spacing: .0025em;
   }
+  
+  ._clr_red {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .feature_item {

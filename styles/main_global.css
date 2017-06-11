@@ -3580,6 +3580,9 @@ body b {
   margin-bottom: 8px;
   letter-spacing: .0025em;
 }
+.check_list ._clr_red:hover {
+  text-decoration: underline;
+}
 
 .feature_item {
   font-size: 15px;
@@ -4150,6 +4153,11 @@ body b {
   display: none;
 }
 
+.check_v1 {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 3px;
+}
 .check_v1 .check_text {
   display: block;
   position: relative;

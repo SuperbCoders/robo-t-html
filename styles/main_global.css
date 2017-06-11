@@ -200,6 +200,13 @@ a {
 
 /*-----------------------------form elements###*/
 @font-face {
+  font-family: 'ApercuMono';
+  src: url(../fonts/apercu-mono-webfont.eot);
+  src: url(../fonts/apercu-mono-webfont.eot?#iefix) format("embedded-opentype"), url(../fonts/apercu-mono-webfont.woff) format("woff"), url(../fonts/apercu-mono-webfont.ttf) format("truetype"), url(../fonts/apercu-mono-webfont.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'ApercuBold';
   src: url(../fonts/ApercuBold.eot);
   src: url(../fonts/ApercuBold.eot?#iefix) format("embedded-opentype"), url(../fonts/ApercuBold.woff) format("woff"), url(../fonts/ApercuBold.ttf) format("truetype"), url(../fonts/ApercuBold.svg) format("svg");
@@ -3348,7 +3355,7 @@ body b {
   }
 }
 .next_project_loader .main_content {
-  padding: 50px 0 0;
+  padding: 35px 0 0;
   min-height: 0;
 }
 
@@ -3442,6 +3449,7 @@ body b {
   font: 20px/1.2 "Reader", sans-serif;
   margin-top: 10px;
   margin-bottom: 15px;
+  display: block;
 }
 @media only screen and (max-width: 767px) {
   .project_caption b {
@@ -3460,6 +3468,9 @@ body b {
     font-size: 34px;
     margin-bottom: 25px;
   }
+}
+.next_project_loader .project_caption {
+  color: #fff;
 }
 
 .section_caption {
@@ -3607,6 +3618,7 @@ body b {
 }
 
 .project_main_img {
+  display: block;
   text-align: center;
   padding-top: 15px;
 }
@@ -3629,20 +3641,20 @@ body b {
 }
 @media only screen and (min-width: 768px) {
   .browser span, .browser span:after, .browser span:before {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .browser span, .browser span:after, .browser span:before {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .browser span, .browser span:after, .browser span:before {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -3655,17 +3667,17 @@ body b {
 }
 @media only screen and (min-width: 768px) {
   .browser {
-    padding-top: 34px;
+    padding-top: 20px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .browser {
-    padding-top: 45px;
+    padding-top: 25px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .browser {
-    padding-top: 47px;
+    padding-top: 30px;
   }
 }
 .browser:before {
@@ -3676,43 +3688,44 @@ body b {
   left: 0;
   height: 14px;
   background: #4a4a4a;
+  border-radius: 5px 5px 0 0;
 }
 @media only screen and (min-width: 768px) {
   .browser:before {
-    height: 34px;
+    height: 20px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .browser:before {
-    height: 45px;
+    height: 25px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .browser:before {
-    height: 47px;
+    height: 30px;
   }
 }
 .browser span {
   background: #ffc12e;
-  top: 4px;
-  left: 10px;
+  top: 5px;
+  left: 12px;
 }
 @media only screen and (min-width: 768px) {
   .browser span {
-    top: 11px;
-    left: 24px;
+    top: 6px;
+    left: 20px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .browser span {
-    top: 15px;
-    left: 31px;
+    top: 7px;
+    left: 25px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .browser span {
-    top: 15px;
-    left: 32px;
+    top: 9px;
+    left: 30px;
   }
 }
 .browser span:after, .browser span:before {
@@ -3725,7 +3738,7 @@ body b {
 }
 @media only screen and (min-width: 768px) {
   .browser span:before {
-    left: -18px;
+    left: -15px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -3744,7 +3757,7 @@ body b {
 }
 @media only screen and (min-width: 768px) {
   .browser span:after {
-    right: -18px;
+    right: -15px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -3772,6 +3785,13 @@ body b {
   margin-bottom: 0;
 }
 
+.next_project_tip {
+  color: #fff;
+  font: 11px "ApercuMedium", sans-serif;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
 .next_project_loader {
   position: relative;
   z-index: 3;
@@ -3782,7 +3802,13 @@ body b {
   }
 }
 .next_project_loader .main_content {
+  -webkit-transition: margin 0.7s;
+  -ms-transition: margin 0.7s;
+  transition: margin 0.7s;
   box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.3);
+}
+.next_project_loader .main_content:after {
+  display: none !important;
 }
 
 .project_previews {
@@ -3898,7 +3924,7 @@ body b {
 }
 
 ._clr_red {
-  color: #ea3e34;
+  color: #fe2224;
 }
 
 ._clr_blue {

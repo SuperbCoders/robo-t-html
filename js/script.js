@@ -35,6 +35,7 @@ var mainSlider,
   wnd,
   doc,
   nextPr,
+  nextProjectMarker,
   isotop,
   preload_offset = 200,
   mainSliderSettings = {
@@ -62,6 +63,7 @@ $(function ($) {
   wnd = $(window);
   doc = $(document);
   nextPr = $('.nextProject');
+  nextProjectMarker = $('.nextProjectMarker');
 
   $('.mainSlider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
@@ -171,24 +173,13 @@ function checkNextProjectLoader() {
     // }
 
   } else { // desktop
-    if (doc.scrollTop() + wnd.height() > nextPr.offset().top + nextPr.outerHeight() - preload_offset) {
-      // nextPr.find('.main_content > .section_inner').addClass('next_loaded animated bounceInUp next_loaded');
 
-      var offset = Math.max(wnd.height() - nextPr.find('.main_content > .section_inner').offset().top, 0);
+    var nextPrSContent = nextPr.find('.main_content');
 
-      nextPr.css('margin-top', -offset);
+    console.log(doc.scrollTop(), wnd.height(), nextPrSContent.outerHeight(), nextProjectMarker.offset().top);
 
-      // console.log(offset, nextPr.find('.main_content > .section_inner').outerHeight());
+    nextPrSContent.css('margin-top', wnd.height() - nextPrSContent.outerHeight() * 2 / 3 > nextProjectMarker.offset().top ? nextPrSContent.outerHeight() / -3 : 0);
 
-      if (offset == nextPr.find('.main_content > .section_inner').outerHeight()) {
-        // alert('here should be redirect to ' + nextPr.attr('data-next-page'));
-
-        // uncomment redirect
-        window.location = nextPr.attr('data-next-page');
-      }
-    } else {
-
-    }
   }
 }
 

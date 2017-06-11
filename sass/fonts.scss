@@ -1,4 +1,15 @@
 @font-face {
+  font-family: 'ApercuMono';
+  src: url(../fonts/apercu-mono-webfont.eot);
+  src: url(../fonts/apercu-mono-webfont.eot?#iefix) format("embedded-opentype"),
+  url(../fonts/apercu-mono-webfont.woff) format("woff"),
+  url(../fonts/apercu-mono-webfont.ttf) format("truetype"),
+  url(../fonts/apercu-mono-webfont.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'ApercuBold';
   src: url(../fonts/ApercuBold.eot);
   src: url(../fonts/ApercuBold.eot?#iefix) format("embedded-opentype"),

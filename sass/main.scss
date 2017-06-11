@@ -125,7 +125,7 @@ body {
   }
 
   .next_project_loader & {
-    padding: 50px 0 0;
+    padding: 35px 0 0;
     min-height: 0;
   }
 }
@@ -223,6 +223,7 @@ body {
   font: 20px/1.2 $Reader;
   margin-top: 10px;
   margin-bottom: 15px;
+  display: block;
 
   @include respond-to-max($resp_step_2) {
     b {
@@ -239,6 +240,10 @@ body {
   @include respond-to-min($resp_step_4) {
     font-size: 34px;
     margin-bottom: 25px;
+  }
+
+  .next_project_loader & {
+    color: #fff;
   }
 }
 
@@ -384,6 +389,7 @@ body {
 }
 
 .project_main_img {
+  display: block;
   text-align: center;
   padding-top: 15px;
 
@@ -404,18 +410,18 @@ body {
   height: 5px;
 
   @include respond-to-min($resp_step_2) {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
   }
 
   @include respond-to-min($resp_step_3) {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
   }
 
   @include respond-to-min($resp_step_4) {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -427,15 +433,15 @@ body {
   margin-bottom: 54px;
 
   @include respond-to-min($resp_step_2) {
-    padding-top: 34px;
+    padding-top: 20px;
   }
 
   @include respond-to-min($resp_step_3) {
-    padding-top: 45px;
+    padding-top: 25px;
   }
 
   @include respond-to-min($resp_step_4) {
-    padding-top: 47px;
+    padding-top: 30px;
   }
 
   &:before {
@@ -446,39 +452,40 @@ body {
     left: 0;
     height: 14px;
     background: #4a4a4a;
+    border-radius: 5px 5px 0 0;
 
     @include respond-to-min($resp_step_2) {
-      height: 34px;
+      height: 20px;
     }
 
     @include respond-to-min($resp_step_3) {
-      height: 45px;
+      height: 25px;
     }
 
     @include respond-to-min($resp_step_4) {
-      height: 47px;
+      height: 30px;
     }
   }
 
   span {
     @extend %browser_btn;
     background: #ffc12e;
-    top: 4px;
-    left: 10px;
+    top: 5px;
+    left: 12px;
 
     @include respond-to-min($resp_step_2) {
-      top: 11px;
-      left: 24px;
+      top: 6px;
+      left: 20px;
     }
 
     @include respond-to-min($resp_step_3) {
-      top: 15px;
-      left: 31px;
+      top: 7px;
+      left: 25px;
     }
 
     @include respond-to-min($resp_step_4) {
-      top: 15px;
-      left: 32px;
+      top: 9px;
+      left: 30px;
     }
 
     &:after,
@@ -493,7 +500,7 @@ body {
       background: #ff6057;
 
       @include respond-to-min($resp_step_2) {
-        left: -18px;
+        left: -15px;
       }
 
       @include respond-to-min($resp_step_3) {
@@ -510,7 +517,7 @@ body {
       background: #28ca40;
 
       @include respond-to-min($resp_step_2) {
-        right: -18px;
+        right: -15px;
       }
 
       @include respond-to-min($resp_step_3) {
@@ -539,6 +546,13 @@ body {
   }
 }
 
+.next_project_tip {
+  color: #fff;
+  font: 11px $ApercuMedium;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
 .next_project_loader {
   position: relative;
   z-index: 3;
@@ -548,7 +562,16 @@ body {
   }
 
   .main_content {
+    @include transition_all(margin .7s);
     box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.30);
+
+    &:after {
+      display: none !important;
+    }
+
+    &.show_up {
+      //@include transform_translate(0, -33%);
+    }
   }
 
   .section_inner {
@@ -563,7 +586,7 @@ body {
   @extend %clearfix;
   margin-left: -50px;
   position: relative;
-  
+
   li {
     float: left;
     width: 50%;
@@ -574,7 +597,7 @@ body {
   &.loaded li {
     //position: absolute;
   }
-  
+
   @include respond-to-max($resp_step_2) {
     display: none;
   }
@@ -684,7 +707,7 @@ body {
 }
 
 ._clr_red {
-  color: #ea3e34;
+  color: #fe2224;
 }
 
 ._clr_blue {

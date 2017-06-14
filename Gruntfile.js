@@ -49,11 +49,7 @@ module.exports = function (grunt) {
       // },
       release: {
         options: {
-          data: {
-            client: true,
-            debug: false,
-            pretty: false
-          }
+          pretty: true
         },
         files: [{
           cwd: "jade/",

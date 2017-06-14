@@ -29,7 +29,7 @@
       height: $b_size;
       width: $b_size;
       //background-image: radial-gradient(-2% 26%, #0ca7e3 0%, rgba(255, 255, 255, 0.00) 99%);
-
+      opacity: .8;
       background: -moz-radial-gradient(center, ellipse cover, rgba(12, 167, 227, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
       background: -webkit-radial-gradient(center, ellipse cover, rgba(12, 167, 227, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
       background: radial-gradient(ellipse at center, rgba(12, 167, 227, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
@@ -48,7 +48,7 @@
       //background: -webkit-radial-gradient(center, ellipse cover, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
       //background: radial-gradient(ellipse at center, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
       //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc1bc6d4', endColorstr='#00ffffff', GradientType=1);
-
+      opacity: .8;
       background: -moz-radial-gradient(center, ellipse cover, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
       background: -webkit-radial-gradient(center, ellipse cover, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
       background: radial-gradient(ellipse at center, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);

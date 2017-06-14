@@ -21,6 +21,7 @@
     top: -(2000px + $b_size / 2);
     height: $b_size;
     width: $b_size;
+    opacity: .8;
     background: -moz-radial-gradient(center, ellipse cover, rgba(75, 236, 58, 1) 0%, rgba(77, 236, 60, 1) 1%, rgba(255, 255, 255, 0) 100%);
     background: -webkit-radial-gradient(center, ellipse cover, rgba(75, 236, 58, 1) 0%, rgba(77, 236, 60, 1) 1%, rgba(255, 255, 255, 0) 100%);
     background: radial-gradient(ellipse at center, rgba(75, 236, 58, 1) 0%, rgba(77, 236, 60, 1) 1%, rgba(255, 255, 255, 0) 100%);
@@ -36,12 +37,11 @@
     height: $a_size;
     left: -(100 + ($a_size / 2));
     bottom: -(1200px + $a_size / 2);
+    opacity: .8;
     background: -moz-radial-gradient(center, ellipse cover, rgba(131, 241, 182, 1) 0%, rgba(133, 241, 183, 1) 1%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
     background: -webkit-radial-gradient(center, ellipse cover, rgba(131, 241, 182, 1) 0%, rgba(133, 241, 183, 1) 1%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
     background: radial-gradient(ellipse at center, rgba(131, 241, 182, 1) 0%, rgba(133, 241, 183, 1) 1%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#83f1b6', endColorstr='#00ffffff', GradientType=1);
-
   }
 }
-
 

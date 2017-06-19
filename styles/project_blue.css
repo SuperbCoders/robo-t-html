@@ -1,42 +1,7 @@
 .main_content.content_blue {
-  background: #36c1d8;
-  background: -moz-linear-gradient(45deg, #36c1d8 0%, #17aae4 100%);
-  background: -webkit-linear-gradient(45deg, #36c1d8 0%, #17aae4 100%);
-  background: linear-gradient(45deg, #36c1d8 0%, #17aae4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#36c1d8', endColorstr='#17aae4', GradientType=1);
-}
-.chrome .main_content.content_blue {
-  background: #17aae4;
-}
-.chrome .main_content.content_blue:after, .chrome .main_content.content_blue:before {
-  content: '';
-  position: absolute;
-}
-.chrome .main_content.content_blue:before {
-  -webkit-transform: rotate(-19deg);
-  -ms-transform: rotate(-19deg);
-  transform: rotate(-19deg);
-  left: -4800px;
-  top: -6700px;
-  height: 9400px;
-  width: 9400px;
-  opacity: .8;
-  background: -moz-radial-gradient(center, ellipse cover, rgba(12, 167, 227, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(12, 167, 227, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
-  background: radial-gradient(ellipse at center, rgba(12, 167, 227, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc0ca7e3', endColorstr='#00ffffff', GradientType=1);
-}
-.chrome .main_content.content_blue:after {
-  -webkit-transform: rotate(19deg);
-  -ms-transform: rotate(19deg);
-  transform: rotate(19deg);
-  width: 6300px;
-  height: 6300px;
-  left: -3250px;
-  bottom: -4350px;
-  opacity: .8;
-  background: -moz-radial-gradient(center, ellipse cover, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
-  background: radial-gradient(ellipse at center, rgba(27, 198, 212, 0.8) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc1bc6d4', endColorstr='#00ffffff', GradientType=1);
+  background: url(i/bg.svg) no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

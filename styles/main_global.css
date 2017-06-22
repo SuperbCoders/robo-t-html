@@ -3396,7 +3396,7 @@ body b {
 @media only screen and (min-width: 768px) {
   .main_content {
     padding-top: 220px;
-    padding-bottom: 105px;
+    padding-bottom: 225px;
   }
   .main_content.mCustomScrollbar {
     padding: 0;
@@ -3409,9 +3409,31 @@ body b {
   padding: 35px 0 0;
   min-height: 0;
 }
+@media only screen and (max-width: 767px) {
+  .next_project_loader .main_content {
+    padding-bottom: 30px;
+  }
+}
 
 .slick-slide {
   float: left;
+}
+
+.project_section {
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .project_section .project_w {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .project_section .project_w {
+    margin-top: 0 !important;
+  }
 }
 
 .section_inner {
@@ -3879,7 +3901,7 @@ body b {
 }
 @media only screen and (max-width: 767px) {
   .project_container {
-    padding-bottom: 30px;
+    padding-top: 0;
   }
 }
 
@@ -3888,16 +3910,21 @@ body b {
   z-index: 3;
 }
 @media only screen and (min-width: 768px) {
-  .next_project_loader {
-    height: 0;
+  .next_project_loader .project_container {
+    height: 500px;
+  }
+  .next_project_loader .bg_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
   }
 }
-.next_project_loader .bg_container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+@media only screen and (max-width: 767px) {
+  .next_project_loader .project_container {
+    margin-top: 0 !important;
+  }
 }
 .next_project_loader .bg_container:after {
   display: none !important;
@@ -4277,6 +4304,7 @@ body b {
 @media only screen and (min-width: 768px) {
   .footer {
     padding-top: 40px;
+    padding-bottom: 150px;
   }
 }
 @media only screen and (min-width: 1024px) {

@@ -142,7 +142,7 @@ body {
     //position: absolute;
     //overflow-y: auto;
     padding-top: 220px;
-    padding-bottom: 105px;
+    padding-bottom: 225px;
     //top: 0;
     //bottom: 0;
     //right: 0;
@@ -160,6 +160,10 @@ body {
   .next_project_loader & {
     padding: 35px 0 0;
     min-height: 0;
+
+    @include respond-to-max($resp_step_2) {
+      padding-bottom: 30px;
+    }
   }
 }
 
@@ -169,6 +173,23 @@ body {
 
 .slick-slide {
   float: left;
+}
+
+.project_section {
+  position: relative;
+
+  .project_w {
+    @include respond-to-min($resp_step_2) {
+      position: fixed;
+      z-index: 10;
+      right: 0;
+      left: 0;
+    }
+
+    @include respond-to-max($resp_step_2) {
+      margin-top: 0 !important;
+    }
+  }
 }
 
 .section_inner {
@@ -622,6 +643,12 @@ body {
 
   .next_project_loader & {
     margin-bottom: 0;
+
+    @include respond-to-min($resp_step_2) {
+      //max-height: 650px;
+      //margin-bottom: -150px;
+      //overflow: hidden;
+    }
   }
 }
 
@@ -639,7 +666,7 @@ body {
   box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.30);
 
   @include respond-to-max($resp_step_2) {
-    padding-bottom: 30px;
+    padding-top: 0;
   }
 }
 
@@ -649,15 +676,26 @@ body {
   z-index: 3;
 
   @include respond-to-min($resp_step_2) {
-    height: 0;
+    .project_container {
+      height: 500px;
+    }
+
+    .bg_container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  @include respond-to-max($resp_step_2) {
+    .project_container {
+      margin-top: 0 !important;
+    }
   }
 
   .bg_container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
 
     &:after {
       display: none !important;

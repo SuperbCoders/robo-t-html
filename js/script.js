@@ -1,3 +1,5 @@
+var s, scrollTimer;
+
 function detectBrowser() {
 
   var myNav = navigator.userAgent.toLowerCase(),
@@ -34,8 +36,6 @@ detectBrowser();
 var mainSlider,
   wnd,
   doc,
-  nextPr,
-  nextProjectMarker,
   isotop,
   preload_offset = 200,
   mainSliderSettings = {
@@ -62,8 +62,6 @@ $(function ($) {
 
   wnd = $(window);
   doc = $(document);
-  nextPr = $('.nextProject');
-  nextProjectMarker = $('.nextProjectMarker');
 
   $('.mainSlider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
@@ -160,6 +158,7 @@ $(window).resize(function () {
 });
 
 function checkNextProjectLoader() {
+
   // console.log(doc.scrollTop(), wnd.height(), nextPr.offset().top, nextPr.outerHeight());
 
   if (doc.scrollTop()) { // touch
@@ -174,24 +173,39 @@ function checkNextProjectLoader() {
 
   } else { // desktop
 
-    var nextPrSContent = nextPr.find('.project_container'), prBlock = $('.projectContainer .project_block');
 
-    console.log(doc.scrollTop(), wnd.height(), nextPrSContent.outerHeight(), nextProjectMarker.offset().top);
+    //clearTimeout(scrollTimer);
 
-    var project_block_start_pos = wnd.height() * 4 / 5;
-    var project_browser_start_pos = wnd.height() / 1.5;
-    var browser_scroll_speed = 3;
+    //scrollTimer = setTimeout(function () {
 
-    if (project_block_start_pos > nextProjectMarker.offset().top) {
-      if (project_browser_start_pos < nextProjectMarker.offset().top) {
-        nextPrSContent.css('margin-top', -(project_block_start_pos - nextProjectMarker.offset().top));
+      var nextPr = $('.nextProject'), nextProjectMarker = $('.nextProjectMarker');
+      var nextPrSContent = nextPr.find('.projectContainer'), prBlock = nextPrSContent.find('.project_w');
+
+      var project_block_start_pos = wnd.height() * 4 / 5;
+      var project_browser_start_pos = wnd.height() / 1.5;
+      var browser_scroll_speed = 3;
+
+      //project_block_start_pos = wnd.height() / 5;
+
+      //console.log(project_block_start_pos, wnd.height(), nextPrSContent.outerHeight(), nextProjectMarker.offset().top);
+
+
+      if (project_block_start_pos > nextProjectMarker.offset().top) {
+        if (nextPrSContent.outerHeight() > nextProjectMarker.offset().top) {
+
+        }
+
+        if (project_browser_start_pos <= nextProjectMarker.offset().top) {
+          nextPrSContent.css('margin-top', -(project_block_start_pos - nextProjectMarker.offset().top));
+        } else {
+          prBlock.css('margin-top', -(Math.min(wnd.height() / 2, browser_scroll_speed * (project_browser_start_pos - nextProjectMarker.offset().top))));
+        }
       } else {
-        prBlock.css('margin-top', -Math.min(wnd.height() / 2, browser_scroll_speed * (project_browser_start_pos - nextProjectMarker.offset().top)));
+        nextPrSContent.css('margin-top', 0);
+        prBlock.css('margin-top', 0);
       }
-    } else {
-      nextPrSContent.css('margin-top', 0);
-      prBlock.css('margin-top', 0);
-    }
+    //}, 1);
+
   }
 }
 
@@ -224,3 +238,11 @@ function animateOnce(el, addClass, removeClass) {
     $(this).removeClass(addClass + ' ' + removeClass);
   });
 }
+
+$(window).resize(function () {
+
+}).load(function () {
+
+  //s = skrollr.init();
+
+});

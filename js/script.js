@@ -36,22 +36,9 @@ detectBrowser();
 var mainSlider,
   wnd,
   doc,
+  mainSliderSettings,
   isotop,
   preload_offset = 200,
-  mainSliderSettings = {
-    dots: false,
-    mobileFirst: true,
-    infinite: false,
-    arrows: false,
-    swipe: false,
-    fade: true,
-    speed: 500,
-    zIndex: 1,
-    initialSlide: 0,
-    slide: '.mainSlider .slide',
-    slidesToShow: 1,
-    touchThreshold: 10
-  },
   animation_timer,
   animations_exit = [
     "bounce", "flash", "pulse", "rubberBand", "shake", "swing", "tada", "wobble", "jello", "bounceOut", "bounceOutDown", "bounceOutLeft", "bounceOutRight", "bounceOutUp", "fadeOut", "fadeOutDown", "fadeOutDownBig", "fadeOutLeft", "fadeOutLeftBig", "fadeOutRight", "fadeOutRightBig", "fadeOutUp", "fadeOutUpBig", "rotateOut", "rotateOutDownLeft", "rotateOutDownRight", "rotateOutUpLeft", "rotateOutUpRight", "slideOutUp", "slideOutDown", "slideOutLeft", "slideOutRight", "zoomOut", "zoomOutDown", "zoomOutLeft", "zoomOutRight", "zoomOutUp"],
@@ -62,6 +49,21 @@ $(function ($) {
 
   wnd = $(window);
   doc = $(document);
+
+  mainSliderSettings = {
+    dots: false,
+    mobileFirst: true,
+    infinite: false,
+    arrows: false,
+    swipe: false,
+    fade: true,
+    speed: 500,
+    zIndex: 1,
+    initialSlide: getInitialSlide(),
+    slide: '.mainSlider .slide',
+    slidesToShow: 1,
+    touchThreshold: 10
+  };
 
   $('.mainSlider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
 
@@ -178,32 +180,32 @@ function checkNextProjectLoader() {
 
     //scrollTimer = setTimeout(function () {
 
-      var nextPr = $('.nextProject'), nextProjectMarker = $('.nextProjectMarker');
-      var nextPrSContent = nextPr.find('.projectContainer'), prBlock = nextPrSContent.find('.project_w');
+    var nextPr = $('.nextProject'), nextProjectMarker = $('.nextProjectMarker');
+    var nextPrSContent = nextPr.find('.projectContainer'), prBlock = nextPrSContent.find('.project_w');
 
-      var project_block_start_pos = wnd.height() * 4 / 5;
-      var project_browser_start_pos = wnd.height() / 1.5;
-      var browser_scroll_speed = 3;
+    var project_block_start_pos = wnd.height() * 4 / 5;
+    var project_browser_start_pos = wnd.height() / 1.5;
+    var browser_scroll_speed = 3;
 
-      //project_block_start_pos = wnd.height() / 5;
+    //project_block_start_pos = wnd.height() / 5;
 
-      //console.log(project_block_start_pos, wnd.height(), nextPrSContent.outerHeight(), nextProjectMarker.offset().top);
+    //console.log(project_block_start_pos, wnd.height(), nextPrSContent.outerHeight(), nextProjectMarker.offset().top);
 
 
-      if (project_block_start_pos > nextProjectMarker.offset().top) {
-        if (nextPrSContent.outerHeight() > nextProjectMarker.offset().top) {
+    if (project_block_start_pos > nextProjectMarker.offset().top) {
+      if (nextPrSContent.outerHeight() > nextProjectMarker.offset().top) {
 
-        }
-
-        if (project_browser_start_pos <= nextProjectMarker.offset().top) {
-          nextPrSContent.css('margin-top', -(project_block_start_pos - nextProjectMarker.offset().top));
-        } else {
-          prBlock.css('margin-top', -(Math.min(wnd.height() / 2, browser_scroll_speed * (project_browser_start_pos - nextProjectMarker.offset().top))));
-        }
-      } else {
-        nextPrSContent.css('margin-top', 0);
-        prBlock.css('margin-top', 0);
       }
+
+      if (project_browser_start_pos <= nextProjectMarker.offset().top) {
+        nextPrSContent.css('margin-top', -(project_block_start_pos - nextProjectMarker.offset().top));
+      } else {
+        prBlock.css('margin-top', -(Math.min(wnd.height() / 2, browser_scroll_speed * (project_browser_start_pos - nextProjectMarker.offset().top))));
+      }
+    } else {
+      nextPrSContent.css('margin-top', 0);
+      prBlock.css('margin-top', 0);
+    }
     //}, 1);
 
   }
@@ -242,7 +244,13 @@ function animateOnce(el, addClass, removeClass) {
 $(window).resize(function () {
 
 }).load(function () {
-
-  //s = skrollr.init();
-
+  if ($(window.location.hash).length) {
+    if (mainSlider == void 0) {
+      docScrollTo($(window.location.hash).offset().top, 1);
+    }
+  }
 });
+
+function getInitialSlide() {
+  return $(window.location.hash).length ? $(window.location.hash).index() : 0;
+}
